@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Your Name, a web developer and designer.">
+    <meta name="keywords" content="portfolio, web developer, designer, creative">
+    <meta name="author" content="Your Name">
+    <title>Your Portfolio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+        .navbar-nav {
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+        }
+        .nav-item {
+            text-align: center;
+        }
+        .custom-navbar {
+            background-color: #333;
+        }
+        .featured-video-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .featured-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+            z-index: 1;
+        }
+        .content-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+            position: relative;
+            z-index: 2;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">HOME</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="about.html">ABOUT</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portfolio.html">PORTFOLIO</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Featured Video Section -->
+    <section class="featured-video-wrapper">
+        <video class="featured-video" autoplay loop muted preload="auto">
+            <source src="/Users/Asus/Videos/originalport.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay-text">
+            <h1>Welcome to Your Portfolio</h1>
+            <p>Web Developer | Designer | Creative Thinker</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Your Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap and necessary JavaScript plugins -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
