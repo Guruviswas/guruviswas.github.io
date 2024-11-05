@@ -62,8 +62,8 @@ i
 }
 .featured-video-wrapper {
   position: relative;
-  width: 70%;
-  height: 70vh;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
 }
 .featured-video {
@@ -73,15 +73,6 @@ i
   position: absolute;
   top: 0;
   left: 0;
-}
-
-.video-section
-{
-    width: 100vw;
-    height: 100vh;
-    background-image: url(placeholder.jpg);
-    background-size: cover;
-    background-position: center;
 }
 
 .image-slider
