@@ -24,11 +24,39 @@
             </nav>
         </header>
 
-        <section class="featured-video-wrapper">
-          <video class="featured-video" autoplay loop muted preload="auto">
-              <source src="../Videos/Portfolio.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-          </video>
+        <section <div id="homepage-slider" class="st-slider">
+
+          <input type="radio" class="cs_anchor radio" name="slider" id="slide1"/>
+          <input type="radio" class="cs_anchor radio" name="slider" id="slide2"/>
+          <input type="radio" class="cs_anchor radio" name="slider" id="slide3"/>
+          <input type="radio" class="cs_anchor radio" name="slider" id="play1" checked=""/>
+      
+          <div class="images">
+             <div class="images-inner">
+              <div class="image-slide">
+                <div class="image bg-yellow" style="background-color:rgb(0, 0, 0);"></div>
+              </div>
+              <div class="image-slide">
+                <div class="image bg-blue" style="background-color:pink;"></div>
+              </div>
+              <div class="image-slide">
+                <div class="image bg-red" style="background-color:orange;"></div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="labels">
+              <label for="slide1" class="label">text slide 1</label>
+              <label for="slide2" class="label">text slide 2</label>
+              <label for="slide3" class="label">text slide 3</label>
+            
+              <div class="fake-radio">
+                <label for="slide1" class="radio-btn"></label>
+                <label for="slide2" class="radio-btn"></label>
+                <label for="slide3" class="radio-btn"></label>
+              </div>
+          </div>
+      </div>
           
       </section>
 
