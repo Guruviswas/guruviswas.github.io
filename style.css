@@ -65,7 +65,7 @@ i
   height: 500px;
 }
 .radio {
-  /*display: none;*/
+  display: none;
 }
 .images {
   overflow: hidden;
