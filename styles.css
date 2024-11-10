@@ -32,12 +32,38 @@ nav {
     justify-content: space-between;
 }
 
-nav .logo 
-{
+.logo img {
+    border-radius: 50%;
+    width: 60px; /* Adjust size as needed */
+    height: 60px; /* Adjust size as needed */
+    object-fit: cover; /* Ensures the image scales properly within the circle */
+}
+
+.hero {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    padding-left: 5px;
+    justify-content: center;
+    text-align: center;
+    height: 100vh; /* Ensures the hero section takes the full viewport height */
+    padding: 20px;
+}
+
+.hero .social-icons {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.2s;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
 }
 
 .nav_links
