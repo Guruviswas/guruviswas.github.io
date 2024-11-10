@@ -7,25 +7,23 @@
     <title>Game Developer Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="/portfolioimages/logo for game developer with the letter V icon png.png">
 </head>
 <body>
 
+    <script async defer src="scripts.js"></script>
+
     <!-- Navbar -->
     <nav>
-        <div class="logo">GameDevPortfolio</div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="logo"><img src="logo.png" alt = "LOGO"></div> <!--Add Image Here-->
+        <div class = "nav_links">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+        </div>
     </nav>
-
-    <div class="menu-toggle">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </div>
 
     <!-- Hero Section (Home) -->
     <section id="home" class="hero">
@@ -35,9 +33,9 @@
     </section>
 
     <!-- About Me Section -->
-    <section id="about" class="about scroll-fade">
+    <section id="about" class="about">
         <h2>About Me</h2>
-        <p>I specialize in game development using Unity, Unreal Engine, and Godot. I create 2D/3D games, and I’m passionate about making engaging experiences for players.</p>
+        <p>I specialize in game development using Unity and Unreal Engine. I create 2D/3D games, and I’m passionate about making engaging experiences for players.</p>
         <h3>Skills</h3>
         <ul>
             <li>Unity, Unreal Engine</li>
@@ -48,67 +46,42 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects scroll-slide">
-        <h2>
-            <img src="portfolioimages/Unity-Logo-White2.png" alt="Unity Logo" class="unity-logo" style="width: 60px; vertical-align: middle;">
-            Unity Projects
-        </h2>
+    <section id="projects" class="projects">
+        <h2>Projects</h2>
         <div class="project-container">
-            <div class="project-card" data-type="2d">
+            <div class="project-card" data-title="CRASH 2D" data-image="portfolioimages/CRASH.jpg" data-description="A short description of the game. Play the demo to explore!" data-link="game1-demo.html">
                 <img src="portfolioimages/CRASH.jpg" alt="Game 1" class="project-img">
                 <h3>CRASH 2D</h3>
                 <p>A short description of the game. Play the demo to explore!</p>
-                <a href="game1-demo.html" class="btn">Play Demo</a>
+                <button class="open-popup btn">View Details</button> <!-- Added button to trigger pop-up -->
             </div>
-            <div class="project-card" data-type="3d">
+
+            <div class="project-card" data-title="ECLIPSE RUN 2D" data-image="portfolioimages/ECLIPSERUN.jpg" data-description="Another project showcasing 3D gameplay. Try it out below!" data-link="game2-demo.html">
                 <img src="portfolioimages/ECLIPSERUN.jpg" alt="Game 2" class="project-img">
                 <h3>ECLIPSE RUN 2D</h3>
                 <p>Another project showcasing 3D gameplay. Try it out below!</p>
-                <a href="game2-demo.html" class="btn">Play Demo</a>
+                <button class="open-popup btn">View Details</button> <!-- Added button to trigger pop-up -->
             </div>
 
-            <div class="project-card" data-type="3d">
-                <img src="portfolioimages/tictactoe.jpg" alt="Game 3" class="project-img">
-                <h3>TIC TAC TOE</h3>
-                <p>Another project showcasing 3D gameplay. Try it out below!</p>
-                <a href="game2-demo.html" class="btn">Play Demo</a>
-            </div>
-
-            <div class="project-card" data-type="3d">
-                <img src="portfolioimages/HandCricket.jpg" alt="Game 4" class="project-img">
-                <h3>HAND CRICKET</h3>
-                <p>Another project showcasing 3D gameplay. Try it out below!</p>
-                <a href="game2-demo.html" class="btn">Play Demo</a>
-            </div>
-
-            <div class="project-card" data-type="3d">
-                <img src="portfolioimages/ECLIPSERUN.jpg" alt="Game 2" class="project-img">
-                <h3>CHARGE IT</h3>
-                <p>Another project showcasing 3D gameplay. Try it out below!</p>
-                <a href="game2-demo.html" class="btn">Play Demo</a>
-            </div>
-            <!-- More projects can be added here -->
+            <!-- Add more project cards here with the same structure -->
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact scroll-fade">
-        <h2>Contact Me</h2>
-        <p>Have a project in mind or just want to chat? Let's connect!</p>
-        <form action="#" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit" class="btn">Send Message</button>
-        </form>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 [Your Name]. All rights reserved.</p>
+        <p>&copy; 2024 Guru Viswas. All rights reserved.</p>
     </footer>
 
-    <!-- Scripts -->
-    <script src="scripts.js"></script>
+    <!-- Pop-up Modal -->
+    <div id="project-popup" class="popup">
+        <div class="popup-content">
+            <img class = "popup-image" id = "popup-image" src="" alt = "IMAGE NOT FOUND">
+            <h3 id="popup-title">Project Title</h3>
+            <p id="popup-description">Project description goes here.</p>
+        </div>
+    </div>
+
+    <div class="overlay"></div>
+
 </body>
 </html>
