@@ -149,6 +149,24 @@ window.onscroll = function () {
 window.onload = function () {
     window.onscroll(); // Trigger the scroll event handler to initialize progress
 };
+document.addEventListener("DOMContentLoaded", () => {
+    const hackingText = document.getElementById("hacking-text");
+
+    // Simulate a hacking effect
+    let fullText = "Hi, I'm Guru Viswas";
+    let currentText = "";
+    let index = 0;
+
+    const typingEffect = setInterval(() => {
+        if (index < fullText.length) {
+            currentText += fullText.charAt(index);
+            hackingText.textContent = currentText;
+            index++;
+        } else {
+            clearInterval(typingEffect);
+        }
+    }, 100); // Adjust typing speed here
+});
 
 function changeHeroImage() {
     const heroSection = document.querySelector('.hero');

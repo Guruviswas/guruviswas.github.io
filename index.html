@@ -27,7 +27,9 @@
 
     <!-- Hero Section (Home) -->
     <section id="home" class="hero">
-        <h1>Hi, I'm Guru Viswas</h1>
+        <h1 class="cursor-bounce-text">
+            <span>H</span><span>i</span><span>,</span> <span>I</span><span>'</span><span>m</span> <span>G</span><span>u</span><span>r</span><span>u</span> <span>V</span><span>i</span><span>s</span><span>w</span><span>a</span><span>s</span>
+        </h1>
         <p>Creating immersive and visually stunning games.</p>
         <a href="#projects" class="btn">See My Work</a>
         
@@ -53,6 +55,34 @@
     
     </section>
 
+
+    <script>
+        const letters = document.querySelectorAll('.cursor-bounce-text span');
+    
+        document.addEventListener('mousemove', (event) => {
+            const { clientX, clientY } = event;
+    
+            letters.forEach((letter) => {
+                const { left, top, width, height } = letter.getBoundingClientRect();
+                const centerX = left + width / 2;
+                const centerY = top + height / 2;
+    
+                const distanceX = clientX - centerX;
+                const distanceY = clientY - centerY;
+    
+                const distance = Math.sqrt(distanceX ** 2 + distanceY ** 2);
+    
+                if (distance < 100) {
+                    letter.style.transform = `translateY(-20px) scale(1.2)`;
+                    letter.style.color = '#3300ff';
+                } else {
+                    letter.style.transform = `translateY(0) scale(1)`;
+                    letter.style.color = '#fff';
+                }
+            });
+        });
+    </script>
+    
       
     <!-- About Me Section -->
 <section id="about" class="about modern-section">

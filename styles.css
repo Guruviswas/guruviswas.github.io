@@ -115,7 +115,7 @@ body, html {
 .hero {
     width: 100%;
     height: 100vh;
-    background-image: url('portfolioimages/bc622a880ea8dd41611c78348b9f91aa.jpg');
+    background-image: url('portfolioimages/4005ff17cd50e22d7834ab907b04ecd2.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -145,10 +145,29 @@ body, html {
     transition: opacity 1s ease-out; /* Smooth fade-out */
 }
 
+
+
 /* Transition-in effect: fade in */
 .hero.transition-in {
     opacity: 1;
     transition: opacity 1s ease-in; /* Smooth fade-in */
+}
+
+.cursor-bounce-text {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    position: relative;
+}
+
+.cursor-bounce-text span {
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 #scroll-progress {
     position: fixed;
