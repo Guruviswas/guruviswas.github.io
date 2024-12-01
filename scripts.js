@@ -186,9 +186,7 @@ function changeHeroImage() {
 }
 
 // Pop-Up Functionality
-const openPopupButtons = document.querySelectorAll('.open-popup'); // The buttons to open the pop-up
-const popup = document.querySelector('#project-popup'); // Target the popup modal by its ID
-const overlay = document.querySelector('.overlay'); // The overlay behind the pop-up
+
 
 // Function to open the pop-up
 function openPopup(event) {
@@ -208,6 +206,10 @@ function openPopup(event) {
 
     console.log("RUN");
 }
+window.onload = function() {
+    document.getElementById("loading").style.display = "none";
+    document.getElementById("content").style.display = "block";
+};
 
 // Hero Section Cursor Interaction
 document.querySelectorAll(".hero-title span").forEach(letter => {
@@ -222,6 +224,62 @@ document.querySelectorAll(".hero-title span").forEach(letter => {
         letter.style.transform = "translate(0, 0) scale(1)";
     });
 });
+window.onload = function() {
+    const loading = document.getElementById("loading");
+    const content = document.getElementById("content");
+
+    if (!loading) console.error("Loading element not found");
+    if (!content) console.error("Content element not found");
+
+    if (loading) loading.style.display = "none";
+    if (content) content.style.display = "block";
+};
+
+const projectCards = document.querySelectorAll('.project-card');
+
+const popupImage = document.getElementById('popup-image');
+const popupTitle = document.getElementById('popup-title');
+const popupDescription = document.getElementById('popup-description');
+
+projectCards.forEach((card) => {
+    card.addEventListener('click', () => {
+        popup.style.display = 'block';
+        popupImage.src = card.dataset.image;
+        popupTitle.textContent = card.dataset.title;
+        popupDescription.innerHTML = card.dataset.description; // Use `innerHTML` for rich text.
+    });
+});
+
+const openPopupButtons = document.querySelectorAll('.open-popup');
+const popup = document.getElementById('project-popup');
+const overlay = document.querySelector('.overlay');
+
+// Open popup and show project details
+openPopupButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        const projectCard = e.target.closest('.project-card');
+        const title = projectCard.getAttribute('data-title');
+        const image = projectCard.getAttribute('data-image');
+        const description = projectCard.getAttribute('data-description');
+        
+        // Set project details in the popup
+        document.getElementById('popup-title').textContent = title;
+        document.getElementById('popup-image').src = image;
+        document.getElementById('popup-description').innerHTML = description;
+        
+        // Show the popup and overlay
+        popup.style.display = 'block';
+        overlay.style.display = 'block';
+    });
+});
+
+// Close popup when clicking on the overlay (anywhere outside the popup)
+overlay.addEventListener('click', () => {
+    popup.style.display = 'none';
+    overlay.style.display = 'none';
+});
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const aboutSection = document.querySelector(".about-container");
@@ -236,7 +294,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         },
         {
-            threshold: 0.2, // Trigger when 20% of the section is visible
+            threshold: 0.1, // Trigger when 20% of the section is visible
         }
     );
 

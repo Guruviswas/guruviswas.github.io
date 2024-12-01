@@ -44,7 +44,26 @@ body {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+.about-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
+@media (max-width: 600px) {
+    .about-section {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.about-section p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+.about-section img {
+    max-width: 100%;
+    height: auto;
+}
 
 html {
     scroll-behavior: smooth;
@@ -341,7 +360,7 @@ body, html {
 
 /* About Section Animation */
 .about-container {
-    opacity: 0;
+    opacity: 1;
     transform: translateY(50px);
     transition: opacity 1s ease-out, transform 1s ease-out;
 }
@@ -355,6 +374,11 @@ body, html {
     background: #f4f4f4;
     padding: 5rem 1rem;
     text-align: center;
+    z-index: 10;
+    position: relative;
+    display: block;
+    opacity: 1;
+    transition: opacity 0.5s ease;
 }
 
 @keyframes fadeIn {
