@@ -27,6 +27,54 @@ window.addEventListener('scroll', () => {
     });
 }, false);
 
+function changeHeroImage() {
+    const heroSection = document.querySelector('.hero');
+    heroSection.style.backgroundImage = `url(${heroImages[currentImageIndex]})`;
+
+    // Fallback: Add console logging for debugging
+    console.log(`Setting hero background to: ${heroImages[currentImageIndex]}`);
+    currentImageIndex = (currentImageIndex + 1) % heroImages.length;
+}
+
+// Array of image URLs for the hero section
+const heroImages = [
+    "portfolioimages/5b34c8f981c7ec6c5e95500e67301ebb.jpg",
+    "portfolioimages/554e9f86d4e6300774cbe2990d0be745.jpg",
+    "portfolioimages/4005ff17cd50e22d7834ab907b04ecd2.jpg",
+    "portfolioimages/bc622a880ea8dd41611c78348b9f91aa.jpg",
+    "portfolioimages/ce948b18a0adc1964b022622f38c8db6.png"
+];
+
+
+
+let currentImageIndex = 0;
+
+// Function to change the hero background image
+function changeHeroImage() {
+    const heroSection = document.querySelector('.hero');
+
+    // Add a transition-out effect (fade out)
+    heroSection.classList.add('transition-out');
+
+    // Wait for the transition-out to complete, then change the image
+    setTimeout(() => {
+        // Change the background image
+        heroSection.style.backgroundImage = `url(${heroImages[currentImageIndex]})`;
+
+        // Move to the next image in the array
+        currentImageIndex = (currentImageIndex + 1) % heroImages.length;
+
+        // Add the transition-in effect (fade in)
+        heroSection.classList.remove('transition-out');
+        heroSection.classList.add('transition-in');
+    }, 1000); // 1000ms timeout to match the transition duration
+}
+
+// Change image every 5 seconds
+setInterval(changeHeroImage, 5000);
+
+// Set initial image
+changeHeroImage();
 // Smooth scrolling for navigation links
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -61,6 +109,29 @@ function updateActiveLink(currentScroll) {
     });
 }
 
+function debounce(func, wait = 20, immediate = false) {
+    let timeout;
+    return function () {
+        const context = this, args = arguments;
+        const later = function () {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        const callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+}
+
+window.addEventListener('scroll', debounce(() => {
+    // Scroll logic here
+
+    const scrollProgress = document.createElement('div');
+scrollProgress.id = 'scroll-progress';
+document.body.appendChild(scrollProgress);
+}));
+
 // Scroll Progress Indicator
 const scrollProgress = document.createElement('div');
 scrollProgress.id = 'scroll-progress';
@@ -78,6 +149,18 @@ window.onscroll = function () {
 window.onload = function () {
     window.onscroll(); // Trigger the scroll event handler to initialize progress
 };
+
+function changeHeroImage() {
+    const heroSection = document.querySelector('.hero');
+    const newImage = new Image();
+
+    // Preload image to avoid flashing or overlapping
+    newImage.src = heroImages[currentImageIndex];
+    newImage.onload = () => {
+        heroSection.style.backgroundImage = `url(${newImage.src})`;
+        currentImageIndex = (currentImageIndex + 1) % heroImages.length;
+    };
+}
 
 // Pop-Up Functionality
 const openPopupButtons = document.querySelectorAll('.open-popup'); // The buttons to open the pop-up
