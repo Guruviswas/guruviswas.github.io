@@ -109,6 +109,11 @@ function updateActiveLink(currentScroll) {
     });
 }
 
+window.addEventListener('load', function() {
+    document.getElementById("loading").style.display = "none";
+    document.getElementById("content").style.display = "block";
+});
+
 function debounce(func, wait = 20, immediate = false) {
     let timeout;
     return function () {

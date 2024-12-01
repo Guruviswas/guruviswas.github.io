@@ -8,8 +8,136 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="/portfolioimages/logo for game developer with the letter V icon png.png">
+
+    <style>
+        html, body {
+          margin: 0;
+          padding: 0;
+          height: 100%;
+          background-color: #404456;
+          overflow: hidden; /* Prevent scrolling during loading */
+        }
+    
+        #loader {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 5.4em;
+          height: 5.4em;
+          background-color: #404456;
+          z-index: 1000;
+        }
+    
+        #hill {
+          position: absolute;
+          width: 7.1em;
+          height: 7.1em;
+          top: 1.7em;
+          left: 1.7em;
+          background-color: transparent;
+          border-left: 0.25em solid whitesmoke;
+          transform: rotate(45deg);
+        }
+    
+        #hill:after {
+          content: '';
+          position: absolute;
+          width: 7.1em;
+          height: 7.1em;
+          left: 0;
+          background-color: #404456;
+        }
+    
+        #box {
+          position: absolute;
+          left: 0;
+          bottom: -0.1em;
+          width: 1em;
+          height: 1em;
+          background-color: transparent;
+          border: 0.25em solid whitesmoke;
+          border-radius: 15%;
+          transform: translate(0, -1em) rotate(-45deg);
+          animation: push 2.5s cubic-bezier(0.79, 0, 0.47, 0.97) infinite;
+        }
+    
+        @keyframes push {
+          0% {
+            transform: translate(0, -1em) rotate(-45deg);
+          }
+          5% {
+            transform: translate(0, -1em) rotate(-50deg);
+          }
+          20% {
+            transform: translate(1em, -2em) rotate(47deg);
+          }
+          25% {
+            transform: translate(1em, -2em) rotate(45deg);
+          }
+          30% {
+            transform: translate(1em, -2em) rotate(40deg);
+          }
+          45% {
+            transform: translate(2em, -3em) rotate(137deg);
+          }
+          50% {
+            transform: translate(2em, -3em) rotate(135deg);
+          }
+          55% {
+            transform: translate(2em, -3em) rotate(130deg);
+          }
+          70% {
+            transform: translate(3em, -4em) rotate(217deg);
+          }
+          75% {
+            transform: translate(3em, -4em) rotate(220deg);
+          }
+          100% {
+            transform: translate(0, -1em) rotate(-225deg);
+          }
+        }
+    
+        /* Hides the loader after the page loads */
+        body.loaded #loader {
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.5s ease-out;
+        }
+    
+        /* Show content after loading */
+        body.loaded {
+          overflow: auto; /* Allow scrolling after load */
+        }
+    
+        #content {
+          display: none;
+          color: whitesmoke;
+          text-align: center;
+          padding: 20px;
+        }
+    
+        body.loaded #content {
+          display: block;
+        }
+      </style>
+    
 </head>
 <body>
+
+    <!-- Loading screen -->
+    <div id="loader">
+        <div id="box"></div>
+        <div id="hill"></div>
+      </div>
+
+      <script>
+        // Wait for the page to fully load
+        window.addEventListener('load', function () {
+          // Add the 'loaded' class to the body
+          document.body.classList.add('loaded');
+        });
+      </script>
 
     <script async defer src="scripts.js"></script>
 
@@ -25,6 +153,13 @@
         </div>
     </nav>
 
+    <script>
+        // Hide loading screen when the page is fully loaded
+        window.onload = function() {
+            document.getElementById("loading").style.display = "none";
+            document.getElementById("content").style.display = "block";
+        };
+    </script>
     
     <!-- Hero Section (Home) -->
     <section id="home" class="hero">
