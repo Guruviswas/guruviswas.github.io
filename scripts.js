@@ -204,6 +204,92 @@ function openPopup(event) {
     console.log("RUN");
 }
 
+// Hero Section Cursor Interaction
+document.querySelectorAll(".hero-title span").forEach(letter => {
+    letter.addEventListener("mousemove", event => {
+        const rect = event.target.getBoundingClientRect();
+        const offsetX = (event.clientX - rect.left) / rect.width - 0.5;
+        const offsetY = (event.clientY - rect.top) / rect.height - 0.5;
+        letter.style.transform = `translate(${offsetX * 20}px, ${offsetY * 20}px) scale(1.3)`;
+    });
+
+    letter.addEventListener("mouseleave", () => {
+        letter.style.transform = "translate(0, 0) scale(1)";
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const aboutSection = document.querySelector(".about-container");
+
+    const observer = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible"); // Add animation class
+                    observer.unobserve(entry.target); // Stop observing once animation is triggered
+                }
+            });
+        },
+        {
+            threshold: 0.2, // Trigger when 20% of the section is visible
+        }
+    );
+
+    observer.observe(aboutSection);
+});
+window.addEventListener('scroll', function() {
+    // Get the About section element
+    const aboutContainer = document.querySelector('.about-container');
+    
+    // Check if the About section is in the viewport
+    const rect = aboutContainer.getBoundingClientRect();
+    if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+        aboutContainer.classList.add('visible');
+    }
+});
+const projectsSection = document.querySelector('.projects');
+document.addEventListener('DOMContentLoaded', function () {
+    const projectsSection = document.querySelector('.projects');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                projectsSection.classList.add('visible');
+            }
+        });
+    });
+
+    observer.observe(projectsSection);
+});
+// Function to check if the section is in the viewport
+function checkVisibility() {
+    const rect = projectsSection.getBoundingClientRect();
+    const isInView = rect.top >= 0 && rect.bottom <= window.innerHeight;
+    
+    if (isInView) {
+        projectsSection.classList.add('visible');
+    } else {
+        projectsSection.classList.remove('visible');
+    }
+}
+
+// Listen for scroll events
+window.addEventListener('scroll', checkVisibility);
+
+const projectSection = document.querySelector('.projects');
+
+function checkVisibility() {
+    const rect = projectSection.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom >= 0) {
+        projectSection.classList.add('visible');
+    }
+}
+
+window.addEventListener('scroll', checkVisibility);
+document.addEventListener('DOMContentLoaded', checkVisibility);
+// Initial check to handle section visibility when the page loads
+checkVisibility();
+
 // Function to close the pop-up
 function closePopup() {
     popup.classList.remove('active');
@@ -224,3 +310,4 @@ document.addEventListener('keydown', (e) => {
         closePopup();
     }
 });
+

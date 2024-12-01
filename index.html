@@ -25,6 +25,7 @@
         </div>
     </nav>
 
+    
     <!-- Hero Section (Home) -->
     <section id="home" class="hero">
         <h1 class="cursor-bounce-text">
@@ -82,7 +83,14 @@
             });
         });
     </script>
+    <script>
+        const toggleMenu = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('nav ul');
     
+        toggleMenu.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
       
     <!-- About Me Section -->
 <section id="about" class="about modern-section">
@@ -93,7 +101,7 @@
         </div>
 
         <!-- About Text -->
-        <div class="about-text">
+        <div class="about-text slide-up">
             <h2>About Me</h2>
             <p>
                 Hi! I'm <strong>Guru Viswas</strong>, a passionate game developer specializing in Unity and Unreal Engine. With over a year of hands-on experience and currently pursuing a B.Sc. in Game Programming at <strong>ICAT Design & Media College</strong>, I’m dedicated to crafting immersive gaming experiences that blend technical expertise and artistic flair.
@@ -295,6 +303,17 @@
             <!-- Add more project cards here with the same structure -->
         </div>
     </section>
+    
+    
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLink = document.querySelector('.nav-link');
+    
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 
     <!-- Footer -->
     <footer>
