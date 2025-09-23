@@ -1,2 +1,0 @@
-# guruviswas.github.io
-portfolio
