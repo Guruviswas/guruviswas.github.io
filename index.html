@@ -10,8 +10,7 @@
   <!-- fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Raleway:wght@700;800;900&display=swap" rel="stylesheet">
 
   <!-- Bootstrap CSS v5.2.1 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -113,8 +112,8 @@
         </div>
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-          <span class="navabar-toggler-icon">
-            <i class="fa-solid fa-bars"></i>
+          <span class="navbar-toggler-icon d-flex align-items-center justify-content-center">
+            <i class="fa-solid fa-bars" style="color: var(--gold);"></i>
           </span>
         </button>
         <div class="offcanvas offcanvas-end text-white bg-black" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
@@ -236,9 +235,15 @@
       <!-- Card 1 -->
       <div class="col-md-6">
         <div class="h-100 bg-black p-4 rounded-4 text-white">
-          <h3>Education</h3>
-          <div class="py-4">
-            <p class="text-muted">2023 - 2026</p>
+          <h3>Experience</h3>
+          <div class="py-3">
+            <p class="text-muted mb-1">Present</p>
+            <h5>Hexr Factory</h5>
+            <p class="text-muted">Unreal Developer</p>
+          </div>
+          <h3 class="mt-4">Education</h3>
+          <div class="py-3">
+            <p class="text-muted mb-1">2023 - 2026</p>
             <h5>ICAT College of Design & Media</h5>
             <p class="text-muted">Bachelors in Game Programming</p>
           </div>
@@ -249,11 +254,19 @@
       <div class="col-md-6">
         <div class="h-100 bg-black p-4 rounded-4 text-white">
           <h3>About me</h3>
-          <div class="py-4">
-  <h4 class="fs-6"> <!-- fs-6 is smaller in Bootstrap -->
-    Final-year B.Sc. Game Programming student with strong expertise in Unreal Engine 5, Blueprints, and C++ programming. Skilled in gameplay systems, technical design, level design, and procedural tool development, with experience in optimization, debugging, and collaborative game projects.
-  </h4>
-</div>
+          <div class="py-3">
+            <div class="fs-6" style="line-height: 1.6; color: #d0d0d0;">
+              Passionate Unreal Developer & Level Designer with a strong focus on gameplay systems, modular level design, and immersive experiences built using Unreal Engine.<br><br>
+              Skilled in Blueprint scripting, visual scripting systems, and crafting mechanics that balance challenge, engagement, and clarity.<br><br>
+              <span class="text-white fw-bold">I specialize in:</span>
+              <ul class="mt-2 mb-3" style="list-style-type: disc; margin-left: 20px;">
+                <li>Creating technical gameplay systems</li>
+                <li>Designing levels with player flow and emotional beats</li>
+                <li>Implementing mechanics and responsive AI</li>
+              </ul>
+              My goal is to build games that feel alive — through systems that react to players and environments that support exploration and decision-making.
+            </div>
+          </div>
         </div>
       </div>
 
@@ -276,14 +289,23 @@
           </div>
 
           <div id="filters" class="button-group d-flex flex-wrap gap-3 justify-content-center py-5" data-aos="fade-up">
-            <a href="#" class="btn btn-primary text-decoration-none text-uppercase is-checked" data-filter=".unreal">Unreal</a>
-            <a href="#" class="btn btn-primary text-decoration-none text-uppercase" data-filter=".unity">Unity</a>
-            <a href="#" class="btn btn-primary text-decoration-none text-uppercase" data-filter=".mechanics">Mechanics</a>
-            <a href="#" class="btn btn-primary text-decoration-none text-uppercase" data-filter=".level-design">Level Design / Blockout</a>
+            <a href="#" class="btn btn-outline-light text-decoration-none text-uppercase is-checked" data-filter="*">Show All</a>
+            <a href="#" class="btn btn-outline-light text-decoration-none text-uppercase" data-filter=".unreal">Unreal Engine</a>
+            <a href="#" class="btn btn-outline-light text-decoration-none text-uppercase" data-filter=".team-project">Team Original</a>
+            <a href="#" class="btn btn-outline-light text-decoration-none text-uppercase" data-filter=".level-design">Level Design</a>
+            <a href="#" class="btn btn-outline-light text-decoration-none text-uppercase" data-filter=".mechanics">Systems</a>
           </div>
         </div>
 
         <div class="grid p-0 clearfix row row-cols-2 row-cols-lg-3 row-cols-xl-4" data-aos="fade-up">
+          <div class="col mb-4 portfolio-item unreal team-project" style="position: relative;">
+            <div class="px-2 py-1 bg-warning text-dark fw-bold" style="position: absolute; top: 10px; left: 20px; z-index: 5; font-size: 10px; border-radius: 2px; letter-spacing: 1px;">FEATURED TITLE</div>
+            <a href="images/Outbreak21/poster.jpg" data-lightbox="outbreak-gallery" data-title="Outbreak: 21 Hours Left (Award-Winning)"
+              title="Award-winning survival game."><img src="images/Outbreak21/poster.jpg"
+                class="img-fluid rounded-4 border border-warning border-3 shadow-lg" alt="portfolio"></a>
+                 <a href="images/Outbreak21/award.jpg" data-lightbox="outbreak-gallery" data-title="Outbreak: Winning Award!"></a>
+          </div>
+
           <div class="col mb-4 portfolio-item unreal">
             <a href="images/JumpingJapong/firstdescription.png" data-lightbox="1" data-title="Jumping_Japong"
               title="Sample Caption goes here for Portfolio Item 1."><img src="images/JumpingJapong/Tnumnail.png"
